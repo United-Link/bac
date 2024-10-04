@@ -332,7 +332,7 @@ def pred_img_from_queue2(img_queue: mp.Queue, result_queue: mp.Queue, close_even
 
         result_dict['img'] = decoded_image
         for x in result:
-            result_list.append(names[x])
+            result_list.append(x)
         result_dict['result'] = result_list
         result_dict['yellow'] = yellow
         

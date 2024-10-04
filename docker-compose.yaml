@@ -24,7 +24,7 @@ services:
               capabilities: [gpu]
     container_name: bac.api
     working_dir: /mnt/Bac
-    command: ["fastapi", "run", "api_main.py"]
+    command: ["sh", "-c", "python model_download.py && fastapi run api_main.py"]
     logging:
       driver: "local"
       options:

@@ -1,0 +1,36 @@
+numpy == 1.26.4
+opencv-python == 4.9.0.80
+torch == 2.3.0
+torchaudio == 2.3.0
+torchvision == 0.18.0
+ultralytics == 8.2.16
+fastapi == 0.111.0
+loguru == 0.7.2
+pydantic-settings == 2.2.1
+dill == 0.3.8
+pypylon == 3.0.1
+gitpython
+ipython
+matplotlib>=3.2.2
+Pillow>=7.1.2
+psutil
+PyYAML>=5.3.1
+requests>=2.23.0
+scipy>=1.4.1
+thop>=0.1.1
+tqdm>=4.64.0
+tensorboard>=2.4.1
+pandas>=1.1.4
+seaborn>=0.11.0
+albumentations>=1.0.3
+pycocotools>=2.0
+huggingface_hub
+
+
+for i in {1..10}
+do
+  curl -X POST http://10.10.10.130:5050 \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -d '{"input_text":"今天天氣真好"}' &
+done
+wait

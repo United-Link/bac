@@ -1,0 +1,335 @@
+2024-09-11 09:04:05.051 | INFO     | api_main:lifespan:53 - init bac setting: {'server_name': 'TableNo', 'dealer_pc': 'DealerPC-IP.102', 'dealer_pc_prot': '15010', 'log_folder': './logs/detection.{time:YYYY.MM.DD}.log', 'image_folder': './images', 'tg_token': '6520503490:AAHS56_-q6-NfvXMWiWKyhJuM-mO59dVErQ', 'tg_chat': -4249895477, 'streaming': 'rtmp://10.22.1.201/cb/BTCB09', 'weight_folder': '/mnt/Bac/weights', 'model_threshold': 0.9, 'area_threshold': 0.85, 'overlap_threshold': 0.85, 'max_det': 7, 'folder_keep': 1000, 'green_lower': array([35, 43, 46]), 'green_upper': array([ 99, 255, 255]), 'calibration_p1': [520, 365, 700, 590], 'calibration_p2': [705, 365, 890, 590], 'calibration_p3': [520, 160, 890, 350], 'calibration_b1': [1000, 365, 1180, 590], 'calibration_b2': [1185, 365, 1365, 590], 'calibration_b3': [1000, 160, 1365, 350], 'white_lower': array([  0,   0, 150]), 'white_upper': array([180,  43, 255]), 'card_width': 252, 'card_height': 356, 'rank_width': 60, 'rank_height': 80, 'rank_width_target': 100, 'rank_height_target': 150, 'rank_img_path': './card', 'mapping_dict': {0: 'A', 1: '2', 2: '3', 3: '4', 4: '5', 5: '6', 6: '7', 7: '8', 8: '9', 9: '10', 10: 'J', 11: 'Q', 12: 'K'}, 'standard_img_dict': {'A': array([[  0,   0,   0, ...,   0,   0,   0],
+       [  0,   0,   0, ...,   0,   0,   0],
+       [  0,   0,   0, ...,   0,   0,   0],
+       ...,
+       [255, 255, 255, ..., 158, 107, 106],
+       [255, 255, 255, ...,  97,  15,  13],
+       [255, 255, 255, ...,  89,   2,   0]], dtype=uint8), '2': array([[  0,   0,   0, ...,   0,   0,   0],
+       [  0,   0,   0, ...,   0,   0,   0],
+       [  0,   0,   0, ...,   0,   0,   0],
+       ...,
+       [115, 115, 150, ..., 255, 255, 255],
+       [ 18,  18,  77, ..., 255, 255, 255],
+       [  0,   0,  64, ..., 255, 255, 255]], dtype=uint8), '3': array([[0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       ...,
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0]], dtype=uint8), '4': array([[ 0,  0,  0, ...,  0,  0,  0],
+       [ 0,  0,  0, ...,  0,  0,  0],
+       [ 0,  0,  0, ...,  0,  0,  0],
+       ...,
+       [ 0,  0,  0, ..., 32,  0,  0],
+       [ 0,  0,  0, ...,  4,  0,  0],
+       [ 0,  0,  0, ...,  0,  0,  0]], dtype=uint8), '5': array([[0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       ...,
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0]], dtype=uint8), '6': array([[0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       ...,
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0]], dtype=uint8), '7': array([[255, 255, 255, ...,   0,   0,   0],
+       [255, 255, 255, ...,   5,   0,   0],
+       [255, 255, 255, ...,  36,   0,   0],
+       ...,
+       [  0,   0,   0, ...,   0,   0,   0],
+       [  0,   0,   0, ...,   0,   0,   0],
+       [  0,   0,   0, ...,   0,   0,   0]], dtype=uint8), '8': array([[0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       ...,
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0]], dtype=uint8), '9': array([[0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       ...,
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0]], dtype=uint8), '10': array([[0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       ...,
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0]], dtype=uint8), 'J': array([[  0,   0,   0, ..., 255, 255, 255],
+       [  0,   0,   0, ..., 255, 255, 255],
+       [  0,   0,   0, ..., 255, 255, 255],
+       ...,
+       [  0,   0,   0, ...,   0,   0,   0],
+       [  0,   0,   0, ...,   0,   0,   0],
+       [  0,   0,   0, ...,   0,   0,   0]], dtype=uint8), 'Q': array([[ 0,  0,  0, ...,  0,  0,  0],
+       [ 0,  0,  0, ...,  0,  0,  0],
+       [ 0,  0,  0, ...,  0,  0,  0],
+       ...,
+       [ 0,  0,  0, ..., 43,  1,  0],
+       [ 0,  0,  0, ...,  8,  0,  0],
+       [ 0,  0,  0, ...,  0,  0,  0]], dtype=uint8), 'K': array([[255, 255, 255, ..., 108,  14,   0],
+       [255, 255, 255, ..., 119,  31,  18],
+       [255, 255, 255, ..., 174, 122, 115],
+       ...,
+       [255, 255, 255, ..., 174, 122, 115],
+       [255, 255, 255, ..., 119,  31,  18],
+       [255, 255, 255, ..., 108,  14,   0]], dtype=uint8)}}
+2024-09-11 09:04:05.052 | INFO     | api_main:lifespan:72 - init TG bot
+2024-09-11 09:04:06.136 | INFO     | api_main:lifespan:75 - init streaming.
+2024-09-11 09:04:06.137 | INFO     | api_main:lifespan:76 - start to open video source.
+2024-09-11 09:04:06.144 | INFO     | api_main:lifespan:93 - wait camera ready.
+2024-09-11 09:04:06.145 | INFO     | utils.camera_utils:open_cam:19 - start to connect to camera.
+2024-09-11 09:04:12.402 | INFO     | utils.camera_utils:open_cam:21 - open cam finish
+2024-09-11 09:04:12.403 | ERROR    | utils.camera_utils:open_cam:33 - can't opencv camera from rtmp://10.22.1.201/cb/BTCB09. Wait 3 second to reconnected. retry: 1
+2024-09-11 09:04:15.406 | INFO     | utils.camera_utils:open_cam:38 - Start reconnecting the camera.
+2024-09-11 09:04:20.414 | ERROR    | utils.camera_utils:open_cam:33 - can't opencv camera from rtmp://10.22.1.201/cb/BTCB09. Wait 3 second to reconnected. retry: 2
+2024-09-11 09:04:23.418 | INFO     | utils.camera_utils:open_cam:38 - Start reconnecting the camera.
+2024-09-11 09:04:28.427 | ERROR    | utils.camera_utils:open_cam:33 - can't opencv camera from rtmp://10.22.1.201/cb/BTCB09. Wait 3 second to reconnected. retry: 3
+2024-09-11 09:04:31.429 | INFO     | utils.camera_utils:open_cam:38 - Start reconnecting the camera.
+2024-09-11 09:04:32.633 | ERROR    | utils.camera_utils:open_cam:33 - can't opencv camera from rtmp://10.22.1.201/cb/BTCB09. Wait 3 second to reconnected. retry: 4
+2024-09-11 09:04:35.637 | INFO     | utils.camera_utils:open_cam:38 - Start reconnecting the camera.
+2024-09-11 09:46:24.206 | INFO     | api_main:lifespan:53 - init bac setting: {'server_name': 'TableNo', 'dealer_pc': 'DealerPC-IP.102', 'dealer_pc_prot': '15010', 'log_folder': './logs/detection.{time:YYYY.MM.DD}.log', 'image_folder': './images', 'tg_token': '6520503490:AAHS56_-q6-NfvXMWiWKyhJuM-mO59dVErQ', 'tg_chat': -4249895477, 'streaming': 'rtmp://10.10.10.130:1935/live/stream', 'weight_folder': '/mnt/Bac/weights', 'model_threshold': 0.9, 'area_threshold': 0.85, 'overlap_threshold': 0.85, 'max_det': 7, 'folder_keep': 1000, 'green_lower': array([35, 43, 46]), 'green_upper': array([ 99, 255, 255]), 'calibration_p1': [520, 365, 700, 590], 'calibration_p2': [705, 365, 890, 590], 'calibration_p3': [520, 160, 890, 350], 'calibration_b1': [1000, 365, 1180, 590], 'calibration_b2': [1185, 365, 1365, 590], 'calibration_b3': [1000, 160, 1365, 350], 'white_lower': array([  0,   0, 150]), 'white_upper': array([180,  43, 255]), 'card_width': 252, 'card_height': 356, 'rank_width': 60, 'rank_height': 80, 'rank_width_target': 100, 'rank_height_target': 150, 'rank_img_path': './card', 'mapping_dict': {0: 'A', 1: '2', 2: '3', 3: '4', 4: '5', 5: '6', 6: '7', 7: '8', 8: '9', 9: '10', 10: 'J', 11: 'Q', 12: 'K'}, 'standard_img_dict': {'A': array([[  0,   0,   0, ...,   0,   0,   0],
+       [  0,   0,   0, ...,   0,   0,   0],
+       [  0,   0,   0, ...,   0,   0,   0],
+       ...,
+       [255, 255, 255, ..., 158, 107, 106],
+       [255, 255, 255, ...,  97,  15,  13],
+       [255, 255, 255, ...,  89,   2,   0]], dtype=uint8), '2': array([[  0,   0,   0, ...,   0,   0,   0],
+       [  0,   0,   0, ...,   0,   0,   0],
+       [  0,   0,   0, ...,   0,   0,   0],
+       ...,
+       [115, 115, 150, ..., 255, 255, 255],
+       [ 18,  18,  77, ..., 255, 255, 255],
+       [  0,   0,  64, ..., 255, 255, 255]], dtype=uint8), '3': array([[0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       ...,
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0]], dtype=uint8), '4': array([[ 0,  0,  0, ...,  0,  0,  0],
+       [ 0,  0,  0, ...,  0,  0,  0],
+       [ 0,  0,  0, ...,  0,  0,  0],
+       ...,
+       [ 0,  0,  0, ..., 32,  0,  0],
+       [ 0,  0,  0, ...,  4,  0,  0],
+       [ 0,  0,  0, ...,  0,  0,  0]], dtype=uint8), '5': array([[0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       ...,
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0]], dtype=uint8), '6': array([[0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       ...,
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0]], dtype=uint8), '7': array([[255, 255, 255, ...,   0,   0,   0],
+       [255, 255, 255, ...,   5,   0,   0],
+       [255, 255, 255, ...,  36,   0,   0],
+       ...,
+       [  0,   0,   0, ...,   0,   0,   0],
+       [  0,   0,   0, ...,   0,   0,   0],
+       [  0,   0,   0, ...,   0,   0,   0]], dtype=uint8), '8': array([[0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       ...,
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0]], dtype=uint8), '9': array([[0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       ...,
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0]], dtype=uint8), '10': array([[0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       ...,
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0]], dtype=uint8), 'J': array([[  0,   0,   0, ..., 255, 255, 255],
+       [  0,   0,   0, ..., 255, 255, 255],
+       [  0,   0,   0, ..., 255, 255, 255],
+       ...,
+       [  0,   0,   0, ...,   0,   0,   0],
+       [  0,   0,   0, ...,   0,   0,   0],
+       [  0,   0,   0, ...,   0,   0,   0]], dtype=uint8), 'Q': array([[ 0,  0,  0, ...,  0,  0,  0],
+       [ 0,  0,  0, ...,  0,  0,  0],
+       [ 0,  0,  0, ...,  0,  0,  0],
+       ...,
+       [ 0,  0,  0, ..., 43,  1,  0],
+       [ 0,  0,  0, ...,  8,  0,  0],
+       [ 0,  0,  0, ...,  0,  0,  0]], dtype=uint8), 'K': array([[255, 255, 255, ..., 108,  14,   0],
+       [255, 255, 255, ..., 119,  31,  18],
+       [255, 255, 255, ..., 174, 122, 115],
+       ...,
+       [255, 255, 255, ..., 174, 122, 115],
+       [255, 255, 255, ..., 119,  31,  18],
+       [255, 255, 255, ..., 108,  14,   0]], dtype=uint8)}}
+2024-09-11 09:46:24.207 | INFO     | api_main:lifespan:72 - init TG bot
+2024-09-11 09:46:25.020 | INFO     | api_main:lifespan:75 - init streaming.
+2024-09-11 09:46:25.021 | INFO     | api_main:lifespan:76 - start to open video source.
+2024-09-11 09:46:25.026 | INFO     | api_main:lifespan:93 - wait camera ready.
+2024-09-11 09:46:25.026 | INFO     | utils.camera_utils:open_cam:19 - start to connect to camera.
+2024-09-11 09:46:25.041 | INFO     | utils.camera_utils:open_cam:21 - open cam finish
+2024-09-11 09:46:25.041 | ERROR    | utils.camera_utils:open_cam:33 - can't opencv camera from rtmp://10.10.10.130:1935/live/stream. Wait 3 second to reconnected. retry: 1
+2024-09-11 09:46:28.042 | INFO     | utils.camera_utils:open_cam:38 - Start reconnecting the camera.
+2024-09-11 09:46:28.043 | ERROR    | utils.camera_utils:open_cam:33 - can't opencv camera from rtmp://10.10.10.130:1935/live/stream. Wait 3 second to reconnected. retry: 2
+2024-09-11 09:46:31.046 | INFO     | utils.camera_utils:open_cam:38 - Start reconnecting the camera.
+2024-09-11 09:46:31.098 | ERROR    | utils.camera_utils:open_cam:33 - can't opencv camera from rtmp://10.10.10.130:1935/live/stream. Wait 3 second to reconnected. retry: 3
+2024-09-11 09:46:34.101 | INFO     | utils.camera_utils:open_cam:38 - Start reconnecting the camera.
+2024-09-11 09:46:34.150 | ERROR    | utils.camera_utils:open_cam:33 - can't opencv camera from rtmp://10.10.10.130:1935/live/stream. Wait 3 second to reconnected. retry: 4
+2024-09-11 09:46:37.154 | INFO     | utils.camera_utils:open_cam:38 - Start reconnecting the camera.
+2024-09-11 09:46:37.156 | ERROR    | utils.camera_utils:open_cam:33 - can't opencv camera from rtmp://10.10.10.130:1935/live/stream. Wait 3 second to reconnected. retry: 5
+2024-09-11 09:46:41.062 | INFO     | utils.camera_utils:open_cam:38 - Start reconnecting the camera.
+2024-09-11 09:46:41.064 | ERROR    | utils.camera_utils:open_cam:33 - can't opencv camera from rtmp://10.10.10.130:1935/live/stream. Wait 3 second to reconnected. retry: 6
+2024-09-11 09:46:44.064 | INFO     | utils.camera_utils:open_cam:38 - Start reconnecting the camera.
+2024-09-11 09:46:44.066 | ERROR    | utils.camera_utils:open_cam:33 - can't opencv camera from rtmp://10.10.10.130:1935/live/stream. Wait 3 second to reconnected. retry: 7
+2024-09-11 10:04:17.735 | INFO     | api_main:lifespan:53 - init bac setting: {'server_name': 'TableNo', 'dealer_pc': 'DealerPC-IP.102', 'dealer_pc_prot': '15010', 'log_folder': './logs/detection.{time:YYYY.MM.DD}.log', 'image_folder': './images', 'tg_token': '6520503490:AAHS56_-q6-NfvXMWiWKyhJuM-mO59dVErQ', 'tg_chat': -4249895477, 'streaming': 'rtmp://10.10.10.130:1935/live/stream', 'weight_folder': '/mnt/Bac/weights', 'model_threshold': 0.9, 'area_threshold': 0.85, 'overlap_threshold': 0.85, 'max_det': 7, 'folder_keep': 1000, 'green_lower': array([35, 43, 46]), 'green_upper': array([ 99, 255, 255]), 'calibration_p1': [520, 365, 700, 590], 'calibration_p2': [705, 365, 890, 590], 'calibration_p3': [520, 160, 890, 350], 'calibration_b1': [1000, 365, 1180, 590], 'calibration_b2': [1185, 365, 1365, 590], 'calibration_b3': [1000, 160, 1365, 350], 'white_lower': array([  0,   0, 150]), 'white_upper': array([180,  43, 255]), 'card_width': 252, 'card_height': 356, 'rank_width': 60, 'rank_height': 80, 'rank_width_target': 100, 'rank_height_target': 150, 'rank_img_path': './card', 'mapping_dict': {0: 'A', 1: '2', 2: '3', 3: '4', 4: '5', 5: '6', 6: '7', 7: '8', 8: '9', 9: '10', 10: 'J', 11: 'Q', 12: 'K'}, 'standard_img_dict': {'A': array([[  0,   0,   0, ...,   0,   0,   0],
+       [  0,   0,   0, ...,   0,   0,   0],
+       [  0,   0,   0, ...,   0,   0,   0],
+       ...,
+       [255, 255, 255, ..., 158, 107, 106],
+       [255, 255, 255, ...,  97,  15,  13],
+       [255, 255, 255, ...,  89,   2,   0]], dtype=uint8), '2': array([[  0,   0,   0, ...,   0,   0,   0],
+       [  0,   0,   0, ...,   0,   0,   0],
+       [  0,   0,   0, ...,   0,   0,   0],
+       ...,
+       [115, 115, 150, ..., 255, 255, 255],
+       [ 18,  18,  77, ..., 255, 255, 255],
+       [  0,   0,  64, ..., 255, 255, 255]], dtype=uint8), '3': array([[0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       ...,
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0]], dtype=uint8), '4': array([[ 0,  0,  0, ...,  0,  0,  0],
+       [ 0,  0,  0, ...,  0,  0,  0],
+       [ 0,  0,  0, ...,  0,  0,  0],
+       ...,
+       [ 0,  0,  0, ..., 32,  0,  0],
+       [ 0,  0,  0, ...,  4,  0,  0],
+       [ 0,  0,  0, ...,  0,  0,  0]], dtype=uint8), '5': array([[0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       ...,
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0]], dtype=uint8), '6': array([[0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       ...,
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0]], dtype=uint8), '7': array([[255, 255, 255, ...,   0,   0,   0],
+       [255, 255, 255, ...,   5,   0,   0],
+       [255, 255, 255, ...,  36,   0,   0],
+       ...,
+       [  0,   0,   0, ...,   0,   0,   0],
+       [  0,   0,   0, ...,   0,   0,   0],
+       [  0,   0,   0, ...,   0,   0,   0]], dtype=uint8), '8': array([[0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       ...,
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0]], dtype=uint8), '9': array([[0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       ...,
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0]], dtype=uint8), '10': array([[0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       ...,
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0]], dtype=uint8), 'J': array([[  0,   0,   0, ..., 255, 255, 255],
+       [  0,   0,   0, ..., 255, 255, 255],
+       [  0,   0,   0, ..., 255, 255, 255],
+       ...,
+       [  0,   0,   0, ...,   0,   0,   0],
+       [  0,   0,   0, ...,   0,   0,   0],
+       [  0,   0,   0, ...,   0,   0,   0]], dtype=uint8), 'Q': array([[ 0,  0,  0, ...,  0,  0,  0],
+       [ 0,  0,  0, ...,  0,  0,  0],
+       [ 0,  0,  0, ...,  0,  0,  0],
+       ...,
+       [ 0,  0,  0, ..., 43,  1,  0],
+       [ 0,  0,  0, ...,  8,  0,  0],
+       [ 0,  0,  0, ...,  0,  0,  0]], dtype=uint8), 'K': array([[255, 255, 255, ..., 108,  14,   0],
+       [255, 255, 255, ..., 119,  31,  18],
+       [255, 255, 255, ..., 174, 122, 115],
+       ...,
+       [255, 255, 255, ..., 174, 122, 115],
+       [255, 255, 255, ..., 119,  31,  18],
+       [255, 255, 255, ..., 108,  14,   0]], dtype=uint8)}}
+2024-09-11 10:04:17.736 | INFO     | api_main:lifespan:72 - init TG bot
+2024-09-11 10:04:18.559 | INFO     | api_main:lifespan:75 - init streaming.
+2024-09-11 10:04:18.559 | INFO     | api_main:lifespan:76 - start to open video source.
+2024-09-11 10:04:18.567 | INFO     | api_main:lifespan:93 - wait camera ready.
+2024-09-11 10:04:18.567 | INFO     | utils.camera_utils:open_cam:19 - start to connect to camera.
+2024-09-11 10:04:18.779 | INFO     | utils.camera_utils:open_cam:21 - open cam finish
+2024-09-11 10:04:18.781 | ERROR    | utils.camera_utils:open_cam:33 - can't opencv camera from rtmp://10.10.10.130:1935/live/stream. Wait 3 second to reconnected. retry: 1
+2024-09-11 10:04:21.782 | INFO     | utils.camera_utils:open_cam:38 - Start reconnecting the camera.
+2024-09-11 10:04:21.878 | ERROR    | utils.camera_utils:open_cam:33 - can't opencv camera from rtmp://10.10.10.130:1935/live/stream. Wait 3 second to reconnected. retry: 2
+2024-09-11 10:04:24.881 | INFO     | utils.camera_utils:open_cam:38 - Start reconnecting the camera.
+2024-09-11 10:04:24.974 | ERROR    | utils.camera_utils:open_cam:33 - can't opencv camera from rtmp://10.10.10.130:1935/live/stream. Wait 3 second to reconnected. retry: 3
+2024-09-11 10:04:27.977 | INFO     | utils.camera_utils:open_cam:38 - Start reconnecting the camera.
+2024-09-11 10:04:28.066 | ERROR    | utils.camera_utils:open_cam:33 - can't opencv camera from rtmp://10.10.10.130:1935/live/stream. Wait 3 second to reconnected. retry: 4
+2024-09-11 10:04:31.070 | INFO     | utils.camera_utils:open_cam:38 - Start reconnecting the camera.
+2024-09-11 10:04:31.158 | ERROR    | utils.camera_utils:open_cam:33 - can't opencv camera from rtmp://10.10.10.130:1935/live/stream. Wait 3 second to reconnected. retry: 5
+2024-09-11 10:04:34.990 | INFO     | utils.camera_utils:open_cam:38 - Start reconnecting the camera.
+2024-09-11 10:04:35.086 | ERROR    | utils.camera_utils:open_cam:33 - can't opencv camera from rtmp://10.10.10.130:1935/live/stream. Wait 3 second to reconnected. retry: 6
+2024-09-11 10:04:38.090 | INFO     | utils.camera_utils:open_cam:38 - Start reconnecting the camera.
+2024-09-11 10:04:38.183 | ERROR    | utils.camera_utils:open_cam:33 - can't opencv camera from rtmp://10.10.10.130:1935/live/stream. Wait 3 second to reconnected. retry: 7
+2024-09-11 10:04:41.186 | INFO     | utils.camera_utils:open_cam:38 - Start reconnecting the camera.
+2024-09-11 10:04:41.274 | ERROR    | utils.camera_utils:open_cam:33 - can't opencv camera from rtmp://10.10.10.130:1935/live/stream. Wait 3 second to reconnected. retry: 8
+2024-09-11 10:04:44.277 | INFO     | utils.camera_utils:open_cam:38 - Start reconnecting the camera.
+2024-09-11 10:04:44.370 | ERROR    | utils.camera_utils:open_cam:33 - can't opencv camera from rtmp://10.10.10.130:1935/live/stream. Wait 3 second to reconnected. retry: 9
+2024-09-11 10:04:47.374 | INFO     | utils.camera_utils:open_cam:38 - Start reconnecting the camera.
+2024-09-11 10:04:47.466 | ERROR    | utils.camera_utils:open_cam:33 - can't opencv camera from rtmp://10.10.10.130:1935/live/stream. Wait 3 second to reconnected. retry: 10
+2024-09-11 10:04:51.294 | INFO     | utils.camera_utils:open_cam:38 - Start reconnecting the camera.
+2024-09-11 10:04:51.390 | ERROR    | utils.camera_utils:open_cam:33 - can't opencv camera from rtmp://10.10.10.130:1935/live/stream. Wait 3 second to reconnected. retry: 11
+2024-09-11 10:04:54.391 | INFO     | utils.camera_utils:open_cam:38 - Start reconnecting the camera.
+2024-09-11 10:04:54.482 | ERROR    | utils.camera_utils:open_cam:33 - can't opencv camera from rtmp://10.10.10.130:1935/live/stream. Wait 3 second to reconnected. retry: 12
+2024-09-11 10:04:57.485 | INFO     | utils.camera_utils:open_cam:38 - Start reconnecting the camera.
+2024-09-11 10:04:57.582 | ERROR    | utils.camera_utils:open_cam:33 - can't opencv camera from rtmp://10.10.10.130:1935/live/stream. Wait 3 second to reconnected. retry: 13
+2024-09-11 10:05:00.585 | INFO     | utils.camera_utils:open_cam:38 - Start reconnecting the camera.
+2024-09-11 10:05:00.682 | ERROR    | utils.camera_utils:open_cam:33 - can't opencv camera from rtmp://10.10.10.130:1935/live/stream. Wait 3 second to reconnected. retry: 14
+2024-09-11 10:05:03.685 | INFO     | utils.camera_utils:open_cam:38 - Start reconnecting the camera.
+2024-09-11 10:05:03.778 | ERROR    | utils.camera_utils:open_cam:33 - can't opencv camera from rtmp://10.10.10.130:1935/live/stream. Wait 3 second to reconnected. retry: 15
+2024-09-11 10:05:07.642 | INFO     | utils.camera_utils:open_cam:38 - Start reconnecting the camera.
+2024-09-11 10:05:07.734 | ERROR    | utils.camera_utils:open_cam:33 - can't opencv camera from rtmp://10.10.10.130:1935/live/stream. Wait 3 second to reconnected. retry: 16
+2024-09-11 10:05:10.738 | INFO     | utils.camera_utils:open_cam:38 - Start reconnecting the camera.
+2024-09-11 10:05:10.834 | ERROR    | utils.camera_utils:open_cam:33 - can't opencv camera from rtmp://10.10.10.130:1935/live/stream. Wait 3 second to reconnected. retry: 17
+2024-09-11 10:05:13.837 | INFO     | utils.camera_utils:open_cam:38 - Start reconnecting the camera.
+2024-09-11 10:05:13.930 | ERROR    | utils.camera_utils:open_cam:33 - can't opencv camera from rtmp://10.10.10.130:1935/live/stream. Wait 3 second to reconnected. retry: 18
+2024-09-11 10:05:16.934 | INFO     | utils.camera_utils:open_cam:38 - Start reconnecting the camera.
+2024-09-11 10:05:17.022 | ERROR    | utils.camera_utils:open_cam:33 - can't opencv camera from rtmp://10.10.10.130:1935/live/stream. Wait 3 second to reconnected. retry: 19
+2024-09-11 10:05:20.025 | INFO     | utils.camera_utils:open_cam:38 - Start reconnecting the camera.
+2024-09-11 10:05:20.114 | ERROR    | utils.camera_utils:open_cam:33 - can't opencv camera from rtmp://10.10.10.130:1935/live/stream. Wait 3 second to reconnected. retry: 20
+2024-09-11 10:05:23.919 | INFO     | utils.camera_utils:open_cam:38 - Start reconnecting the camera.
+2024-09-11 10:05:24.010 | ERROR    | utils.camera_utils:open_cam:33 - can't opencv camera from rtmp://10.10.10.130:1935/live/stream. Wait 3 second to reconnected. retry: 21
+2024-09-11 10:05:27.014 | INFO     | utils.camera_utils:open_cam:38 - Start reconnecting the camera.
+2024-09-11 10:05:27.110 | ERROR    | utils.camera_utils:open_cam:33 - can't opencv camera from rtmp://10.10.10.130:1935/live/stream. Wait 3 second to reconnected. retry: 22
+2024-09-11 10:05:30.114 | INFO     | utils.camera_utils:open_cam:38 - Start reconnecting the camera.
+2024-09-11 10:05:30.202 | ERROR    | utils.camera_utils:open_cam:33 - can't opencv camera from rtmp://10.10.10.130:1935/live/stream. Wait 3 second to reconnected. retry: 23
+2024-09-11 10:05:33.206 | INFO     | utils.camera_utils:open_cam:38 - Start reconnecting the camera.
+2024-09-11 10:05:33.298 | ERROR    | utils.camera_utils:open_cam:33 - can't opencv camera from rtmp://10.10.10.130:1935/live/stream. Wait 3 second to reconnected. retry: 24
+2024-09-11 10:05:36.301 | INFO     | utils.camera_utils:open_cam:38 - Start reconnecting the camera.
+2024-09-11 10:05:36.390 | ERROR    | utils.camera_utils:open_cam:33 - can't opencv camera from rtmp://10.10.10.130:1935/live/stream. Wait 3 second to reconnected. retry: 25
+2024-09-11 10:05:40.270 | INFO     | utils.camera_utils:open_cam:38 - Start reconnecting the camera.
+2024-09-11 10:05:40.366 | ERROR    | utils.camera_utils:open_cam:33 - can't opencv camera from rtmp://10.10.10.130:1935/live/stream. Wait 3 second to reconnected. retry: 26
+2024-09-11 10:05:43.370 | INFO     | utils.camera_utils:open_cam:38 - Start reconnecting the camera.
+2024-09-11 10:05:43.467 | ERROR    | utils.camera_utils:open_cam:33 - can't opencv camera from rtmp://10.10.10.130:1935/live/stream. Wait 3 second to reconnected. retry: 27
+2024-09-11 10:05:46.470 | INFO     | utils.camera_utils:open_cam:38 - Start reconnecting the camera.
+2024-09-11 10:05:46.562 | ERROR    | utils.camera_utils:open_cam:33 - can't opencv camera from rtmp://10.10.10.130:1935/live/stream. Wait 3 second to reconnected. retry: 28
+2024-09-11 10:05:49.565 | INFO     | utils.camera_utils:open_cam:38 - Start reconnecting the camera.
+2024-09-11 10:05:49.658 | ERROR    | utils.camera_utils:open_cam:33 - can't opencv camera from rtmp://10.10.10.130:1935/live/stream. Wait 3 second to reconnected. retry: 29
+2024-09-11 10:05:52.660 | INFO     | utils.camera_utils:open_cam:38 - Start reconnecting the camera.
+2024-09-11 10:05:52.750 | ERROR    | utils.camera_utils:open_cam:33 - can't opencv camera from rtmp://10.10.10.130:1935/live/stream. Wait 3 second to reconnected. retry: 30

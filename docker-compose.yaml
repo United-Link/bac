@@ -5,7 +5,7 @@ services:
     ipc: host
     restart: always
     volumes:
-      - $HOME/Bac:/mnt/Bac
+      - $HOME/bac-main:/mnt/bac-main
       - /etc/localtime:/etc/localtime:ro
     devices:
       - /dev/video0:/dev/video0
@@ -23,7 +23,7 @@ services:
             - driver: nvidia
               capabilities: [gpu]
     container_name: bac.api
-    working_dir: /mnt/Bac
+    working_dir: /mnt/bac-main
     command: ["sh", "-c", "python model_download.py && fastapi run api_main.py"]
     logging:
       driver: "local"

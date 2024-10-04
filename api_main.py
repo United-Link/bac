@@ -283,9 +283,9 @@ async def detection(
         logger.error('get result timeout.')
         return current_info
     if (result_dict[0]['yellow'] or result_dict2[0]['yellow']):
-        current_info.Yellow = 'y'
+        current_info.Yellow = 1
     else:
-        current_info.Yellow = 'n'
+        current_info.Yellow = 0
     # save information
     #background_task.add_task(save_result, result_dict, current_info, global_dict['setting'].image_folder)
     

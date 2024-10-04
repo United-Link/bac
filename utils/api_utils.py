@@ -273,15 +273,10 @@ def pred_img_from_queue(img_queue: mp.Queue, result_queue: mp.Queue, close_event
             #temp_result.cnt = results.masks[i].xy[0].astype(np.int32)
 
             #result_list.append(temp_result)
-        names=  np.array(['AS', '2S', '3S', '4S', '5S', '6S', '7S', '8S', '9S', '10S', 'JS', 'QS', 'KS', 'AH', '2H', '3H', '4H', '5H', '6H', '7H', '8H', '9H', '10H', 'JH', 'QH', 'KH', \
-                          'AD', '2D', '3D', '4D', '5D', '6D', '7D', '8D', '9D', '10D', 'JD', 'QD', 'KD', 'AC', '2C', '3C', '4C', '5C', '6C', '7C', '8C', '9C', '10C', 'JC', 'QC', 'KC', 'Y'])
 
         result_dict['img'] = decoded_image
         for x in result:
-            if(x<255):
-                result_list.append(names[x])
-            else:
-                result_list.append('')
+            result_list.append(x)
         result_dict['result'] = result_list
         result_dict['yellow'] = yellow
         
@@ -335,15 +330,9 @@ def pred_img_from_queue2(img_queue: mp.Queue, result_queue: mp.Queue, close_even
         result_list = []
         result_dict = {}
 
-        names=  np.array(['AS', '2S', '3S', '4S', '5S', '6S', '7S', '8S', '9S', '10S', 'JS', 'QS', 'KS', 'AH', '2H', '3H', '4H', '5H', '6H', '7H', '8H', '9H', '10H', 'JH', 'QH', 'KH', \
-                          'AD', '2D', '3D', '4D', '5D', '6D', '7D', '8D', '9D', '10D', 'JD', 'QD', 'KD', 'AC', '2C', '3C', '4C', '5C', '6C', '7C', '8C', '9C', '10C', 'JC', 'QC', 'KC', 'Y'])
-
         result_dict['img'] = decoded_image
         for x in result:
-            if(x<255):
-                result_list.append(names[x])
-            else:
-                result_list.append('')
+            result_list.append(names[x])
         result_dict['result'] = result_list
         result_dict['yellow'] = yellow
         

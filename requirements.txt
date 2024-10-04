@@ -25,12 +25,5 @@ seaborn>=0.11.0
 albumentations>=1.0.3
 pycocotools>=2.0
 huggingface_hub
-
-
-for i in {1..10}
-do
-  curl -X POST http://10.10.10.130:5050 \
-  -H "Content-Type: application/x-www-form-urlencoded" \
-  -d '{"input_text":"今天天氣真好"}' &
 done
 wait

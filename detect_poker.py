@@ -95,6 +95,8 @@ def detect_poker(model, im0, conf_thres, model_type, x_center=None):
         if(x2-x<y2-y):
             width_sum+=x2-x
             width_n +=1
+    if width_n==0:
+        return card_list, yellow
     avg_width = (width_sum/width_n)*2
     #print(f'width{avg_width}')
     if (x_center is None):

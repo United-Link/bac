@@ -1,0 +1,32 @@
+version: "3.8"
+services:
+  bac_detection:
+    image: bac_dev:0.0.1
+    ipc: host
+    restart: always
+    volumes:
+      - $HOME/Bac:/mnt/Bac
+      - /etc/localtime:/etc/localtime:ro
+    devices:
+      - /dev/video0:/dev/video0
+      - /dev/video1:/dev/video1
+      - /dev/video2:/dev/video2
+      - /dev/video3:/dev/video3
+    environment:
+      - TARGET=bac
+    ports:
+      - 8014:8000
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              capabilities: [gpu]
+    container_name: bac.api
+    working_dir: /mnt/Bac
+    command: ["fastapi", "run", "api_main.py"]
+    logging:
+      driver: "local"
+      options:
+        max-size: "100m"
+        max-file: "14"

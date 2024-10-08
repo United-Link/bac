@@ -375,7 +375,7 @@ def monitor_early_draw(result_queue: mp.Queue, current_info: BacReturn, bettime:
         
         for card in result_dict['result']:
                 
-            if card.result != [255,255,255,255,255,255]:
+            if card != 255:
                 current_info.Status = APIStatus.earlydraw.value
                 logger.info(f'Get Early Draw')
                 break

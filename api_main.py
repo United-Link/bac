@@ -36,20 +36,6 @@ def empty_queue(queue):
     print(f'Initial queue size: {queue.qsize()}')
     for i in range(10):
         try:
-            item = queue.get(timeout=0.1)  # Use a small timeout
-            result.append(item)
-            print(f'Retrieved item: {item}. Remaining size: {queue.qsize()}')
-        except queue.empty:
-            print("Queue was empty or timed out, stopping.")
-            break
-    print(f'result_size:{len(result)}')
-    return result
-
-def empty_queue(queue):
-    result = []
-    print(f'Initial queue size: {queue.qsize()}')
-    for i in range(10):
-        try:
             item = queue.get(timeout=1.0) 
             result.append(item)
             print(f'Retrieved item: {item}. Remaining size: {queue.qsize()}')

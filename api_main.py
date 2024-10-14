@@ -31,14 +31,18 @@ def set_multiprocessing_start_method():
         # The start method has already been set. This is expected if it was initialized earlier.
         pass
 
-def empty_queue(queue):
+def empty_queue(q):
     result = []
-    print(f'Initial queue size: {queue.qsize()}')
-    for i in range(10):
+    q_size = q.qsize
+    print(f'Initial queue size: {q_size}')
+    if q_size<6:
+        print('Not enough frames')
+        return result
+    for i in range(q_size):
         try:
-            item = queue.get(timeout=1.0) 
+            item = q.get(timeout=1.0) 
             result.append(item)
-            print(f'Retrieved item: {item}. Remaining size: {queue.qsize()}')
+            print(f'Retrieved item: {item}. Remaining size: {q.qsize()}')
         except queue.Empty:  
             print("Queue was empty or timed out, stopping.")
             break

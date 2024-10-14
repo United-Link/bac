@@ -33,18 +33,12 @@ def set_multiprocessing_start_method():
 
 def empty_queue(q):
     result = []
-    q_size = q.qsize
-    print(f'Initial queue size: {q_size}')
-    if q_size<6:
-        print('Not enough frames')
-        return result
-    for i in range(q_size):
+    for i in range(10):
         try:
             item = q.get(timeout=1.0) 
             result.append(item)
-            print(f'Retrieved item: {item}. Remaining size: {q.qsize()}')
         except queue.Empty:  
-            print("Queue was empty or timed out, stopping.")
+            print("Not enough frames :{i-10}.")
             break
     print(f'Result size: {len(result)}')
     return result

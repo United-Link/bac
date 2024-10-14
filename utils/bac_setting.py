@@ -22,12 +22,6 @@ mapping_name = {
     12: 'K',
 }
 
-def get_standard_img(img_path:Path, mapping_dict: dict):
-    img_dict = {}
-    for key, value in mapping_dict.items():
-        img_p = img_path / f'{value}.png'
-        img_dict[value] = cv2.imread(str(img_p), cv2.IMREAD_GRAYSCALE)
-    return img_dict
 
 class BacSetting(BaseSettings):
     server_name: str
@@ -68,11 +62,6 @@ class BacSetting(BaseSettings):
     def lsit_to_array(cls, v):
         return np.array(v)
     
-    @field_validator('standard_img_dict')
-    def read_standard_img(cls, v, info):
-        img_path = Path(info.data['rank_img_path'])
-        return get_standard_img(img_path, info.data['mapping_dict'])
-
     class Config:
         protected_namespaces = ('settings_',)
         env_file = './bac_config/bac_config.ini'

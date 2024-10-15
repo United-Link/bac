@@ -149,30 +149,14 @@ async def get_frame_from_queue(global_dict, request):
             break
 
         result_dict = global_dict['result_queue'].get()
-        decoded_image = result_dict['img']
+        frame = result_dict['img']
+
         
         for box in global_dict['boxes']:
             x1, y1, x2, y2 = box
-            cv2.rectangle(decoded_image, (x1, y1), (x2, y2), (255, 0, 0), 2)
+            cv2.rectangle(frame, (x1, y1), (x2, y2), (255, 0, 0), 2)
 
-        cnt_list = []
-        min_quad_list = []
-
-        for card in result_dict['result']:
-            x1, y1, x2, y2 = card.xyxy
-
-            rect = cv2.minAreaRect(card.cnt)
-            quad = cv2.boxPoints(rect)
-            quad = np.int0(quad)
-            min_quad_list.append(quad)
-            cnt_list.append(card.cnt)
-
-            text = f'{card.name}, {card.conf:.4f}'
-            cv2.putText(decoded_image, text, (x1, y1), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 255), 2, cv2.LINE_AA)
-
-        cv2.drawContours(decoded_image, min_quad_list, -1, (0, 255, 0), 3)
-        cv2.drawContours(decoded_image, cnt_list, -1, (0, 0, 255), 2)
-        
+        _, decoded_image = cv2.imencode('.jpg', frame)
         
         yield (b'--frame\r\n'
                    b'Content-Type: image/jpeg\r\n\r\n' + decoded_image.tobytes() + b'\r\n')

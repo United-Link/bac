@@ -21,8 +21,8 @@ from utils.plots import Annotator, colors, save_one_box
 from utils.torch_utils import select_device, smart_inference_mode
 import cv2
 
-def judge(y,yr,y_thres):
-    if (abs(y-yr)<yr*y_thres):
+def judge(y,yr,width):
+    if (abs(y-yr)<width):
         return True
     return False
 def check(l1,l2):
@@ -116,7 +116,7 @@ def detect_poker(model, im0, conf_thres, model_type, x_center=None):
     line_y = [pred_2[0]]
     j=0
     for i in range(pred_num-1):
-        if((pred_2[i+1]-line_y[j])>y_thres*line_y[j]):
+        if((pred_2[i+1]-line_y[j])>avg_width*2):
             j=j+1
             line_y.append(pred_2[i+1])
         else:
@@ -126,7 +126,7 @@ def detect_poker(model, im0, conf_thres, model_type, x_center=None):
     j=0
     for y, idx in zip(pred_2,index_2):
         #print(idx)
-        if(judge(y,line_y[j],y_thres)):
+        if(judge(y,line_y[j],2*avg_width)):
             classes[j].append([y,idx])
         else:
             classes.append([])

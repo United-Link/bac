@@ -116,7 +116,7 @@ def detect_poker(model, im0, conf_thres, model_type, x_center=None):
     line_y = [pred_2[0]]
     j=0
     for i in range(pred_num-1):
-        if((pred_2[i+1]-line_y[j])>avg_width*2):
+        if((pred_2[i+1]-line_y[j])>avg_width*1.5):
             j=j+1
             line_y.append(pred_2[i+1])
         else:
@@ -126,7 +126,8 @@ def detect_poker(model, im0, conf_thres, model_type, x_center=None):
     j=0
     for y, idx in zip(pred_2,index_2):
         #print(idx)
-        if(judge(y,line_y[j],2*avg_width)):
+        #print(avg_width)
+        if(judge(y,line_y[j],1.5*avg_width)):
             classes[j].append([y,idx])
         else:
             classes.append([])
@@ -278,4 +279,3 @@ def detect_poker(model, im0, conf_thres, model_type, x_center=None):
 
 
         
-

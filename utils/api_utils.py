@@ -235,8 +235,9 @@ def pred_img_from_queue(img_queue: mp.Queue, result_queue: mp.Queue, close_event
     while not close_event.is_set():
         start_time = time.time()
         decoded_image = img_queue.get()
-        result, yellow = detect_poker(model, decoded_image, conf_res, model_type, None)
-        #logger.info(f'inference time:{time.time()-start_time}')
+        result, yellow, error_message = detect_poker(model, decoded_image, conf_res, model_type, None)
+        if error_message != 'ok':
+            logger.info(f'yolo_detect:{error_message}')
         
         
         #results = model.predict(decoded_image, conf=conf, max_det=max_det, retina_masks=True, verbose=False)[0]
@@ -310,7 +311,9 @@ def pred_img_from_queue2(img_queue: mp.Queue, result_queue: mp.Queue, close_even
 
         decoded_image = img_queue.get()
         start_time = time.time()
-        result, yellow = detect_poker(model, decoded_image, conf_res, model_type, None)
+        result, yellow, error_message = detect_poker(model, decoded_image, conf_res, model_type, None)
+        if error_message != 'ok':
+            logger.info(f'glan_detect:{error_message}')
         result_list = []
         result_dict = {}
 
@@ -492,4 +495,3 @@ def detect_qrcode_and_post(img_queue: mp.Queue, url: str):
         if frame_count > 5:
             frame_count = 0
             last_dealer_id = None
-

@@ -43,6 +43,7 @@ def detect_poker(model, im0, conf_thres, model_type, x_center=None):
     classes = None
     visualize=False  # visualize features
     yellow = False #yellow card
+    error_message = "ok"
 
 
 
@@ -83,7 +84,8 @@ def detect_poker(model, im0, conf_thres, model_type, x_center=None):
             yellow = True
             
     if (pred.tolist() == []):
-        return card_list, yellow
+        error_message = "no poker"
+        return card_list, yellow, error_message
     pred_num = len(pred)
     original_card = [255,255,255,255]
     add_card = [[],[]]
@@ -96,7 +98,8 @@ def detect_poker(model, im0, conf_thres, model_type, x_center=None):
             width_sum+=x2-x
             width_n +=1
     if width_n==0:
-        return card_list, yellow
+        error_message = "not detected width"
+        return card_list, yellow, error_message
     avg_width = (width_sum/width_n)*2
     #print(f'width{avg_width}')
     if (x_center is None):
@@ -119,12 +122,13 @@ def detect_poker(model, im0, conf_thres, model_type, x_center=None):
         if((pred_2[i+1]-line_y[j])>avg_width*1.5):
             j=j+1
             line_y.append(pred_2[i+1])
-        else:
-            line_y[j] = (line_y[j]+pred_2[i+1])/2
     #print('line')
     #print(line_y)
     j=0
     for y, idx in zip(pred_2,index_2):
+        if j >= len(line_y):
+            error_message = 'cards not in line'
+            return card_list, yellow, error_message
         #print(idx)
         #print(avg_width)
         if(judge(y,line_y[j],1.5*avg_width)):
@@ -187,6 +191,20 @@ def detect_poker(model, im0, conf_thres, model_type, x_center=None):
             if(dis<-4*avg_width):
                 original_idxs1[0] = pred[idx,4:6].tolist()
             else:
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
                 original_idxs1[1] = pred[idx,4:6].tolist()
     #print(original_idxs1)
 
@@ -271,7 +289,7 @@ def detect_poker(model, im0, conf_thres, model_type, x_center=None):
         else:
             card_list[2+i*3] = check(labels[0],labels[1])
     #print(f'card_list:{card_list}')
-    return card_list, yellow
+    return card_list, yellow, error_message
 
 
 
